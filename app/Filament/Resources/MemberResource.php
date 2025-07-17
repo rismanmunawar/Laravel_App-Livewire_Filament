@@ -23,7 +23,8 @@ class MemberResource extends Resource
     protected static ?string $model = Member::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-user-group';
-    protected static ?string $navigationGroup = 'Content Management';
+    protected static ?string $navigationGroup = 'System Management';
+    protected static ?string $navigationLabel = 'Our Team';
 
     public static function form(Form $form): Form
     {

@@ -24,7 +24,7 @@ class ArticleResource extends Resource
     protected static ?string $model = Article::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
-    protected static ?string $navigationGroup = 'Content Management';
+    protected static ?string $navigationGroup = 'System Management';
 
     public static function form(Form $form): Form
     {
@@ -38,7 +38,7 @@ class ArticleResource extends Resource
                 Select::make('status')->options([
                     1 => 'Active',
                     0 => 'Block'
-                ])
+                ])->required()->placeholder('Choose Status'),
             ]);
     }
 

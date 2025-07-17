@@ -1,5 +1,5 @@
 <main>
-    <section class="page-header bg-tertiary">
+    <section class="page-header bg-tertiary py-3">
         <div class="container">
             <div class="row">
                 <div class="col-8 mx-auto text-center">

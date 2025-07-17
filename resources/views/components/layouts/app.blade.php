@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{{ asset('front/plugins/font-awesome/fontawesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('front/plugins/font-awesome/brands.css') }}">
     <link rel="stylesheet" href="{{ asset('front/plugins/font-awesome/solid.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <!-- # Main Style Sheet -->
     <link rel="stylesheet" href="{{asset('front/css/style.css') }}">
@@ -33,31 +34,80 @@
     <header class="navigation bg-tertiary">
         <nav class="navbar navbar-expand-xl navbar-light text-center py-3">
             <div class="container">
+                <!-- Logo -->
                 <a wire:navigate class="navbar-brand" href="{{ route('home') }}">
-                    <img loading="prelaod" decoding="async" class="img-fluid" width="160" src="{{ asset('front/images/logo.png') }}" alt="Wallet">
+                    <img class="img-fluid" width="160" src="{{ asset('front/images/logo.png') }}" alt="Logo">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span>
+
+                <!-- Toggle -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-                        <li class="nav-item "><a wire:navigate class="nav-link" href="{{ route('home') }}">Home</a></li>
-                        <li class="nav-item "><a wire:navigate class="nav-link" href="{{ route('page', ['pageId' => 1]) }}">About Us</a></li>
-                        <!-- <li class="nav-item "><a wire:navigate class="nav-link" href="{{ route("page",1) }}">About Us</a></li> -->
-                        <li class="nav-item "><a wire:navigate class="nav-link" href="{{ route('servicesPage') }}">Services</a></li>
-                        <li class="nav-item "><a wire:navigate class="nav-link" href="{{ route('teamPage') }}">Our Team</a></li>
-                        <li class="nav-item "><a wire:navigate class="nav-link " href="{{ route('blogPage') }}">Blog</a></li>
-                        <li class="nav-item "><a wire:navigate class="nav-link " href="{{ route('faqPage') }}">FAQ</a></li>
+
+                <!-- Navbar -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav m-auto mb-2 mb-xl-0">
+
+                        <!-- Home -->
+                        <li class="nav-item">
+                            <a wire:navigate class="nav-link" href="{{ route('home') }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a wire:navigate class="nav-link" href="{{ route('page', ['pageId' => 1]) }}">About Us</a>
+                        </li>
+                        <li class="nav-item">
+                            <a wire:navigate class="nav-link" href="{{ route('teamPage') }}">Our Team</a>
+                        </li>
+
+                        <!-- Company Dropdown -->
+                        <!-- <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Company</a>
+                            <ul class="dropdown-menu">
+                                <li><a wire:navigate class="dropdown-item" href="{{ route('page', ['pageId' => 1]) }}">About Us</a></li>
+                                <li><a wire:navigate class="dropdown-item" href="{{ route('teamPage') }}">Our Team</a></li>
+                            </ul>
+                        </li> -->
+
+                        <!-- Services Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Services</a>
+                            <ul class="dropdown-menu">
+                                <li><a wire:navigate class="dropdown-item" href="{{ route('servicesPage') }}">All Services</a></li>
+                                <li><a wire:navigate class="dropdown-item" href="{{ route('monitoringPage') }}">Extract Monitor</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Docs -->
+                        <li class="nav-item">
+                            <a wire:navigate class="nav-link" href="{{ route('docsPages') }}">Docs</a>
+                        </li>
+
+                        <!-- FAQ -->
+                        <li class="nav-item">
+                            <a wire:navigate class="nav-link" href="{{ route('faqPage') }}">FAQ</a>
+                        </li>
+
+                        <!-- Blog (optional) -->
+                        <li class="nav-item">
+                            <a wire:navigate class="nav-link" href="{{ route('blogPage') }}">Articles</a>
+                        </li>
                     </ul>
-                    <a wire:navigate href="{{ route('contactPage') }}" class="btn btn-outline-primary">Contact Us</a>
+
+                    <!-- Contact Button -->
+                    <a wire:navigate href="{{ route('contactPage') }}" class="btn btn-outline-primary">
+                        Contact Us
+                    </a>
                 </div>
             </div>
         </nav>
     </header>
+
     <!-- /navigation -->
 
-    {{ $slot }}
-
-
+    <!-- Konten utama -->
+    <div class="container-fluid px-5 py-4">
+        {{ $slot }}
+    </div>
 
     <footer class="section-sm bg-tertiary">
         <div class="container">
@@ -81,7 +131,7 @@
                             </li>
                             <li class="mb-2"><a wire:navigate href="{{ route('contactPage') }}">Contact Us</a>
                             </li>
-                            <li class="mb-2"><a wire:navigate href="{{ route('blogPage') }}">Blog</a>
+                            <li class="mb-2"><a wire:navigate href="{{ route('blogPage') }}">Articles</a>
                             </li>
                             <li class="mb-2"><a wire:navigate href="{{ route('teamPage') }}">Team</a>
                             </li>

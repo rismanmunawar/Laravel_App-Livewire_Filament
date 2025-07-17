@@ -1,13 +1,13 @@
 <main>
-    <section class="page-header bg-tertiary">
+    <section class="page-header bg-tertiary py-3">
         <div class="container">
             <div class="row">
                 <div class="col-8 mx-auto text-center">
-                    <h2 class="mb-3 text-capitalize">Blog</h2>
+                    <h2 class="mb-3 text-capitalize">Articles</h2>
                     <ul class="list-inline breadcrumbs text-capitalize" style="font-weight:500">
                         <li class="list-inline-item"><a wire:navigate href="{{ route('home') }}">Home</a>
                         </li>
-                        <li class="list-inline-item">/ &nbsp; Blog
+                        <li class="list-inline-item">/ &nbsp; Articles
                         </li>
                     </ul>
                 </div>
